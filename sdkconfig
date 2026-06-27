@@ -2248,56 +2248,94 @@ CONFIG_WIFI_PROV_STA_ALL_CHANNEL_SCAN=y
 # end of Wi-Fi Provisioning Manager
 
 #
-# CMake Utilities
+# TinyUSB Stack
 #
-# CONFIG_CU_RELINKER_ENABLE is not set
-# CONFIG_CU_DIAGNOSTICS_COLOR_NEVER is not set
-CONFIG_CU_DIAGNOSTICS_COLOR_ALWAYS=y
-# CONFIG_CU_DIAGNOSTICS_COLOR_AUTO is not set
-# CONFIG_CU_GCC_LTO_ENABLE is not set
-# CONFIG_CU_GCC_STRING_1BYTE_ALIGN is not set
-# end of CMake Utilities
+CONFIG_TINYUSB_DEBUG_LEVEL=1
 
 #
-# USB Device UAC Configuration
+# TinyUSB DCD
 #
-CONFIG_UAC_TUSB_VID=0x303A
-CONFIG_UAC_TUSB_PID=0x8000
-CONFIG_UAC_TUSB_MANUFACTURER="Espressif"
-CONFIG_UAC_TUSB_PRODUCT="ESP UAC Device"
-CONFIG_UAC_TUSB_SERIAL_NUM="12345678"
-CONFIG_TINYUSB_RHPORT_FS=y
+# CONFIG_TINYUSB_MODE_SLAVE is not set
+CONFIG_TINYUSB_MODE_DMA=y
+# end of TinyUSB DCD
 
 #
-# USB Device UAC
+# TinyUSB callbacks
 #
-# CONFIG_USB_DEVICE_UAC_AS_PART is not set
-CONFIG_UAC_SPEAKER_CHANNEL_NUM=1
-CONFIG_UAC_MIC_CHANNEL_NUM=1
-CONFIG_UAC_SAMPLE_RATE=48000
-CONFIG_UAC_BIT_RESOLUTION_16=y
-# CONFIG_UAC_BIT_RESOLUTION_24_IN_24 is not set
-# CONFIG_UAC_BIT_RESOLUTION_24_IN_32 is not set
-# CONFIG_UAC_BIT_RESOLUTION_32 is not set
-CONFIG_UAC_BIT_RESOLUTION=16
-CONFIG_UAC_BYTES_PER_SAMPLE=2
-CONFIG_UAC_SPK_INTERVAL_MS=10
-CONFIG_UAC_MIC_INTERVAL_MS=10
-CONFIG_UAC_SPK_NEW_PLAY_INTERVAL=100
-# CONFIG_UAC_SUPPORT_MACOS is not set
+# CONFIG_TINYUSB_SUSPEND_CALLBACK is not set
+# CONFIG_TINYUSB_RESUME_CALLBACK is not set
+# end of TinyUSB callbacks
 
 #
-# UAC Task Config
+# Descriptor configuration
 #
-CONFIG_UAC_TINYUSB_TASK_PRIORITY=5
-CONFIG_UAC_TINYUSB_TASK_CORE=-1
-CONFIG_UAC_SPK_TASK_PRIORITY=5
-CONFIG_UAC_SPK_TASK_CORE=-1
-CONFIG_UAC_MIC_TASK_PRIORITY=5
-CONFIG_UAC_MIC_TASK_CORE=-1
-# end of UAC Task Config
-# end of USB Device UAC
-# end of USB Device UAC Configuration
+
+#
+# You can provide your custom descriptors via tinyusb_driver_install()
+#
+CONFIG_TINYUSB_DESC_USE_ESPRESSIF_VID=y
+CONFIG_TINYUSB_DESC_USE_DEFAULT_PID=y
+CONFIG_TINYUSB_DESC_BCD_DEVICE=0x0100
+CONFIG_TINYUSB_DESC_MANUFACTURER_STRING="Espressif Systems"
+CONFIG_TINYUSB_DESC_PRODUCT_STRING="Espressif Device"
+CONFIG_TINYUSB_DESC_SERIAL_STRING="123456"
+# end of Descriptor configuration
+
+#
+# Mass Storage Class (MSC)
+#
+# CONFIG_TINYUSB_MSC_ENABLED is not set
+# end of Mass Storage Class (MSC)
+
+#
+# Communication Device Class (CDC)
+#
+# CONFIG_TINYUSB_CDC_ENABLED is not set
+# end of Communication Device Class (CDC)
+
+#
+# Musical Instrument Digital Interface (MIDI)
+#
+CONFIG_TINYUSB_MIDI_COUNT=0
+# end of Musical Instrument Digital Interface (MIDI)
+
+#
+# Human Interface Device Class (HID)
+#
+CONFIG_TINYUSB_HID_COUNT=0
+# end of Human Interface Device Class (HID)
+
+#
+# Device Firmware Upgrade (DFU)
+#
+# CONFIG_TINYUSB_DFU_MODE_DFU is not set
+# CONFIG_TINYUSB_DFU_MODE_DFU_RUNTIME is not set
+CONFIG_TINYUSB_DFU_MODE_NONE=y
+# end of Device Firmware Upgrade (DFU)
+
+#
+# Bluetooth Host Class (BTH)
+#
+# CONFIG_TINYUSB_BTH_ENABLED is not set
+# end of Bluetooth Host Class (BTH)
+
+#
+# Network driver (ECM/NCM/RNDIS)
+#
+# CONFIG_TINYUSB_NET_MODE_ECM_RNDIS is not set
+# CONFIG_TINYUSB_NET_MODE_NCM is not set
+CONFIG_TINYUSB_NET_MODE_NONE=y
+# end of Network driver (ECM/NCM/RNDIS)
+
+#
+# Vendor Specific Interface
+#
+CONFIG_TINYUSB_VENDOR_COUNT=1
+CONFIG_TINYUSB_VENDOR_RX_BUFSIZE=64
+CONFIG_TINYUSB_VENDOR_TX_BUFSIZE=64
+CONFIG_TINYUSB_VENDOR_EPSIZE=64
+# end of Vendor Specific Interface
+# end of TinyUSB Stack
 # end of Component config
 
 # CONFIG_IDF_EXPERIMENTAL_FEATURES is not set
