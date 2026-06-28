@@ -1,0 +1,2 @@
+ffmpeg -i tone.wav -f s16le -ac 1 -ar 48000 tone.pcm
+xxd -i tone.pcm > tone_pcm.h
