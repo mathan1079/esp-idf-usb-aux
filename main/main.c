@@ -23,9 +23,6 @@ static const char *TAG = "PCM_USB_BULK";
 #define EP_VENDOR_OUT 0x02
 #define EP_VENDOR_IN 0x82
 
-static int64_t rate_last_us = 0;
-static uint32_t rate_bytes = 0;
-
 #define EP_SIZE 64
 #define TX_CHUNK 64
 
